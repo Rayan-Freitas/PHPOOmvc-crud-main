@@ -1,0 +1,8 @@
+<div id="painel">
+  {% for post in postagens %}
+  <div class="postagens">
+    <a class="titulo" href="?pagina=post&id={{post.id}}">{{post.titulo}}</a>
+    <article>Conteúdo {{post.conteudo}}</article>
+  </div>
+  {% endfor %}
+</div>
