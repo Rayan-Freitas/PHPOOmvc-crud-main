@@ -4,7 +4,12 @@
     {
         public function start($urlGet) //Recebe url que o usuário está tentando acessar
         {
-            $acao = 'index';
+
+            if (isset($urlGet['metodo'])) {
+                $acao = $urlGet['metodo'];
+            } else {
+                $acao = 'index';
+            }
 
             if (isset($urlGet['pagina'])) {
                 $controller = ucFirst($urlGet['pagina'].'Controller'); //Se tiver o parametro pagina na url, redirecionará o usuário para os controllers adequados

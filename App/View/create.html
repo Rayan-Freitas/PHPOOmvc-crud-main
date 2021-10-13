@@ -1,0 +1,42 @@
+<h1>Criando publicação</h1>
+
+<form method="post" action="?pagina=admin&metodo=insert">
+    <div class="field">
+    <label class="label">
+    Título</label>
+    <div class="control">
+        <input class="input" name="titulo" type="text" placeholder="Text input">
+    </div>
+    </div>
+
+    <div class="field">
+    <label class="label">Message</label>
+    <div class="control">
+        <textarea class="textarea" name="mensagem" placeholder="Textarea"></textarea>
+    </div>
+    </div>
+
+    <div class="field is-grouped">
+    <div class="botaoclass">
+        <button type="submit" id="botao" class="button is-link">Publicar</button>
+    </div>
+    </div>
+</form>
+
+
+<style>
+    .control{
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+    }
+    .botaoclass{
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+    }
+</style>
