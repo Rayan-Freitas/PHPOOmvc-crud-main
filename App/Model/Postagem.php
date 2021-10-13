@@ -44,4 +44,29 @@
             return $resultado;
 
         }
+
+        public static function insert($dadosPost)
+        {
+            if (empty($dadosPost['titulo']) or empty($dadosPost['mensagem'])) {
+                throw new Exception("Preencha todos os campos!");
+            
+                return false;
+            }
+
+            $con = Connection::getConn();
+
+            $sql = "INSERT INTO posts (titulo, conteudo) VALUES (:tit, :cont)";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':tit', $dadosPost['titulo']);
+            $sql->bindValue(':cont', $dadosPost['mensagem']);
+            $result = $sql->execute();
+
+            if ($result == false) {
+                throw new Exception("Falha ao inserir publicação!");
+            
+                return false;
+            }
+
+            return true;
+        }
     }

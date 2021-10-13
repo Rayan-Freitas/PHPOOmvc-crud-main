@@ -1,6 +1,6 @@
 <h1>Gerenciador de Conteúdo</h1>
 
-<a href="?pagina=admin&metodo=create">Adicionar publicação</a><br>
+<a href="?pagina=admin&metodo=create" id="titulo">Adicionar publicação</a><br>
 <hr>
 <table border="2">
     <tr>
@@ -9,13 +9,23 @@
         <th>Alteração</th>
         <th>Deleção</th>
     </tr>
+
+    {% for post in postagens %}
     <tr>
-        <th>ID</th>
-        <th>Título</th>
-        <th>Alteração</th>
-        <th>Deleção</th>
+        <th>{{post.id}}</th>
+        <th>{{post.titulo}}</th>
+        <th><a href="?pagina=post&id={{post.id}}">Alterar</a></th>
+        <th><a href="?pagina=post&id={{post.id}}">Deletar</a></th>
     </tr>
+    {% endfor %}
 </table>
+
+<style>
+    #titulo{
+        font-weight: bold;
+        font-size: 4vh;
+    }
+</style>
 
 <style>
     table{
