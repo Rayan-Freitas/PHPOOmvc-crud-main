@@ -1,27 +1,29 @@
-<h1 id="titulo">Criando publicação</h1>
+<h1 id="titulo">Alterar publicação</h1>
 <br>
 
-<form method="post" action="?pagina=admin&metodo=insert">
+<form method="post" action="?pagina=admin&metodo=update">
     <div class="field">
     <label class="label">
     Título</label>
     <div class="control">
-        <input class="input" name="titulo" type="text" placeholder="Text input">
+        <input class="input" name="titulo" type="text" value="{{titulo}}" placeholder="Text input">
     </div>
     </div>
 
     <div class="field">
     <label class="label">Mensagem</label>
     <div class="control">
-        <textarea class="textarea" name="mensagem" placeholder="Textarea"></textarea>
+        <textarea class="textarea" name="mensagem" placeholder="Textarea">{{mensagem}}</textarea>
     </div>
     </div>
 
     <div class="field is-grouped">
     <div class="botaoclass">
-        <button type="submit" id="botao" class="button is-link">Publicar</button>
+        <button type="submit" id="botao" class="button is-link">Alterar Publicação</button>
     </div>
     </div>
+
+    <input type="hidden" name="id" value="{{id}}">
 </form>
 
 

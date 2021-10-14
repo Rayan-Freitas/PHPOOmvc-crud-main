@@ -42,4 +42,41 @@
             }
             Postagem::insert($_POST);
         }
+
+        public function alterar($paramId)
+        {
+            $loader = new \Twig\Loader\FilesystemLoader('app/View');
+            $twig = new \Twig\Environment($loader);
+            $template = $twig->load('update.html');
+
+            $post = Postagem::retornaPostId($paramId);
+
+            $parametros = array();
+            $parametros['id'] = $post->id;
+            $parametros['titulo'] = $post->titulo;
+            $parametros['mensagem'] = $post->conteudo;
+
+
+            $conteudo = $template->render($parametros);
+            echo $conteudo;
+        }
+
+        public function update()
+        {
+            try {
+                Postagem::update($_POST);
+
+                echo '<script>alert("Publicação alterada com sucesso!")</script>';
+                echo '<script>location.href="?pagina=admin&metodo=index"</script>';
+
+            } catch (Exception $e) {
+
+                echo '<script>alert("'.$e->getMessage().'")</script>';
+                echo '<script>location.href="?pagina=admin&metodo=alterar&id='.$_POST['id'].'"</script>';
+            }
+
+            //var_dump($_POST);
+            Postagem::update($_POST);
+
+        }
     }
