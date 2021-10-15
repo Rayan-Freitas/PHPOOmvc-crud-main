@@ -90,4 +90,22 @@
 
             return true;
         }
+
+        public static function delete($id)
+        {
+            $con = Connection::getConn();
+
+            $sql = "DELETE FROM posts WHERE id = :id";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':id', $id);
+            $result = $sql->execute();
+
+            if ($result == 0) {
+                throw new Exception("Falha ao deletar a publicação!");
+
+                return false;
+            } 
+
+            return true;
+        }
     }

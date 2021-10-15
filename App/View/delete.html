@@ -1,0 +1,32 @@
+
+<form method="post" action="?pagina=admin&metodo=delete&id={{id}}">
+    <h1 id="titulo">Deletando Publicação</h1>
+    <br>
+    <h1 id="aviso">Aviso: você tem certeza que deseja deletar essa publicação? Os dados não poderão ser recuperados</h1>
+
+    <br>
+    <p>Publicação número {{id}}</p>
+
+
+    <br><br>
+    <button type="submit" id="botao" class="button is-danger" style="margin: 0 auto;">Deletar</button>
+</form>
+
+<style>
+    
+    p{
+        font-weight: bold;
+        font-size: 3vh;
+    }
+    #titulo{
+        font-weight: bold;
+        font-size: 4vh;
+    }
+    #aviso{
+        margin: 0 auto;
+        width: 60%;
+        font-weight: bold;
+        font-size: 3vh;
+        color: red;
+    }
+</style>
