@@ -1,20 +1,89 @@
-<div id="painel" style="background-color: aqua;">
-    <div class="postagens">
+<div id="painel2" style="background-color: aqua;">
+    <div id="postagens" class="postagens">
       <a class="titulo">{{titulo}}</a>
       <article>Conteúdo {{conteudo}}</article>
     </div>
     <br><br>
-    <div>
 
+    <div id="comentariosDiv">
       {% if comentarios == false %}
         <p style="font-weight: bold; font-size: 3vh;">Ainda não há comentários</p>
       {% else %}
         {% for coment in comentarios %}
-        <hr>
-        <h2 style="font-weight: bold; font-size: 2.5vh;">Nome: {{coment.nome}}</h2>
+        <div id="divNomeComent">
+          <h2 id="nomeComent" style="font-weight: bold; font-size: 2.5vh;">Nome: {{coment.nome}}</h2>
+        </div>
+        <div id="contentMsg">
         <p>{{coment.mensagem}}</p>
+        </div>
         <br>
         {% endfor %}
       {% endif %}
     </div>
+    <form method="post" action="?pagina=post&metodo=addComent">
+      <input placeholder="Digite seu Nome" type="text" name="nome"><br><br>
+      <textarea placeholder="Digite sua Mensagem" name="msg"></textarea><br>
+      <input type="hidden" name="idPost" value="{{idPost}}">
+      <br>
+
+      <button id="botaoComentar" class="button is-link">Comentar</button>
+      <br>
+    </form>
   </div>
+
+<style>
+  #divNomeComent{
+    text-align: left;
+    width: 70%;
+    margin: 0 4%;
+  }
+  #contentMsg{
+    text-align: left;
+    width: 70%;
+    margin: 0 4%;
+  }
+  article{
+    margin: 2% auto auto auto;
+  }
+  #postagens{
+    margin: 2% auto;
+  }
+  #painel2{
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 40px;
+  }
+  form{
+    font-weight: bold;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+  }
+  #botaoComentar{
+    width: 20%;
+  } 
+  input{
+    border: solid 1px green;
+    border-radius: 10px;
+    text-align: center;
+    height: auto;
+    margin: 0 auto;
+    padding: 5px;
+    position: relative;
+    width: 50%;
+  }
+  textarea{
+    border: solid 1px green;
+    border-radius: 5px;
+    text-align: center;
+    height: 10vh;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    width: 50%;
+  }
+</style>
+
+  
