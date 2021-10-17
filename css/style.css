@@ -1,11 +1,21 @@
 #painel{
+    border-radius: 20px;
     text-align: center;
     justify-content: space-around;
-    margin: auto;
+    margin: 0.5% auto;
     width: 90%;
     height: 100vh;
     padding: 10px;
     background-color: aliceblue;
+}
+#logo{
+  background-color: transparent;
+}
+.navbar-brand{
+  background-color: rgb(134, 87, 189);
+}
+#navbarBasicExample{
+  background-color: rgb(134, 87, 189);
 }
 nav{
     font-size: 125%;
@@ -14,10 +24,9 @@ nav{
 }
 .postagens{
     font-size: 4vh;
-    margin-top: 5%;
     width: auto;
     height: auto;
-    margin-left: 5%;
+    margin: 3% 5%;
     display: inline-block;
 }
 .titulo{
@@ -28,8 +37,10 @@ a{
     color: inherit;
 }
 a:hover{
-    color: aqua;
+    color: #f0f8ff;
 }
-body{
-    background-color: black;
+#bggif{
+    background-size: cover;
+    background-repeat: repeat;
+    z-index:-5;
 }

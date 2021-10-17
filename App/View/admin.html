@@ -1,38 +1,50 @@
 <h1>Gerenciador de Conteúdo</h1>
+<head>
+</head>
 
 <a href="?pagina=admin&metodo=create" id="titulo">Adicionar publicação</a><br>
 <hr>
-<table border="2">
-    <tr>
-        <th>ID</th>
-        <th>Título</th>
-        <th>Alteração</th>
-        <th>Deleção</th>
-    </tr>
+<div id="painel">
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Alteração</th>
+            <th>Deleção</th>
+        </tr>
 
-    {% for post in postagens %}
-    <tr>
-        <th>{{post.id}}</th>
-        <th>{{post.titulo}}</th>
-        <th><a href="?pagina=admin&metodo=alterar&id={{post.id}}">Alterar</a></th>
-        <th><a href="?pagina=admin&metodo=deletar&id={{post.id}}">Deletar</a></th>
-    </tr>
-    {% endfor %}
-</table>
+        {% for post in postagens %}
+        <tr>
+            <th>{{post.id}}</th>
+            <th>{{post.titulo}}</th>
+            <th><a href="?pagina=admin&metodo=alterar&id={{post.id}}">Alterar</a></th>
+            <th><a id="deletar" href="?pagina=admin&metodo=deletar&id={{post.id}}">Deletar</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
 
 <style>
     #titulo{
+        margin-left: 0;
         font-weight: bold;
         font-size: 4vh;
     }
-</style>
-
-<style>
+    #titulo:hover{
+        color: lightseagreen;
+    }
     table{
-        width: 70%;
+        width: 80%;
         height: auto;
         margin: 0 auto;
         padding: 10px;
-        position: relative;
+        position: absolute;
+    }
+    th:hover a{
+        color: lightsalmon;
+    }
+    #deletar:hover{
+        color: red;
     }
 </style>

@@ -40,7 +40,6 @@
                 echo '<script>alert("'.$e->getMessage().'")</script>';
                 echo '<script>location.href="?pagina=admin&metodo=create"</script>';
             }
-            Postagem::insert($_POST);
         }
 
         public function alterar($paramId)

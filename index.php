@@ -21,5 +21,3 @@ ob_end_clean();
 
 $templatePronto = str_replace('{{conteudo}}', $conteudo, $template);
 echo $templatePronto;
-
-echo $template;

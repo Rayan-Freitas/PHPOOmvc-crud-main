@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
-  <body style="background-color: black;">
+  <body style="background-image: url('https://nossoamigo.org/wp-content/uploads/2019/08/6955d2_fecbca0b23214bc48f1dc5acae4b3491_mv2.gif');">
       <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: aliceblue;">
         <div class="navbar-brand">
           <a class="navbar-item" href="http://localhost/phpoomvc-crud-main/">
-            <img src="https://img2.gratispng.com/20180329/krw/kisspng-registered-trademark-symbol-service-mark-copyright-r-5abdb049e31042.9226822115223808739301.jpg" width="auto" height="auto">
+            
           </a>
+
       
           <a id="burguer" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -66,9 +67,65 @@
       </nav>
   </section>
   <div id="painel">
-    <div>
+    <div id="paineldiv">
       {{conteudo}}
     </div>
   </div>
 </html>
+
+<style>
+  #painel{
+    border-radius: 20px;
+    text-align: center;
+    justify-content: space-around;
+    margin: 0.5% auto;
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+    background-color: aliceblue;
+}
+#logo{
+  background-color: transparent;
+}
+.navbar-brand{
+  background-color: rgb(134, 87, 189);
+}
+#navbarBasicExample{
+  background-color: rgb(134, 87, 189);
+}
+#navbarBasicExample:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+nav{
+    font-size: 125%;
+    font-weight: bold;
+    height: 10vh;
+}
+.postagens{
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 10px 2px -6px rgba(2,163,21,1);
+  -moz-box-shadow: 0px 10px 2px -6px rgba(2,163,21,1);
+  box-shadow: 0px 10px 2px -6px rgba(2,163,21,1);
+    font-size: 4vh;
+    width: auto;
+    height: auto;
+    margin: 3% 5%;
+    display: inline-block;
+}
+.titulo{
+    font-weight: bold;
+}
+a{
+    text-decoration: none !important;
+    color: inherit;
+}
+a:hover{
+    color: lightseagreen;
+}
+#bggif{
+    background-size: cover;
+    background-repeat: repeat;
+    z-index:-5;
+}
+</style>
   
