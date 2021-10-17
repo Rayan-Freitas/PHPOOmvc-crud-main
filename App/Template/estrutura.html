@@ -12,11 +12,8 @@
   <body style="background-image: url('https://nossoamigo.org/wp-content/uploads/2019/08/6955d2_fecbca0b23214bc48f1dc5acae4b3491_mv2.gif');">
       <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: aliceblue;">
         <div class="navbar-brand">
-          <a class="navbar-item" href="http://localhost/phpoomvc-crud-main/">
-            
-          </a>
+          <a class="navbar-item" href="http://localhost/phpoomvc-crud-main/"></a>
 
-      
           <a id="burguer" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -65,24 +62,28 @@
           </div>
         </div>
       </nav>
+      <div id="painel">
+        <div id="paineldiv">
+          {{conteudo}}
+        </div>
+      </div>
   </section>
-  <div id="painel">
-    <div id="paineldiv">
-      {{conteudo}}
-    </div>
-  </div>
 </html>
 
 <style>
   #painel{
+    min-height: 100vh;
+    height: fit-content;
     border-radius: 20px;
     text-align: center;
     justify-content: space-around;
-    margin: 0.5% auto;
-    width: 90%;
-    height: 100%;
+    width: 80%;
     padding: 10px;
     background-color: aliceblue;
+}
+  #paineldiv{
+    margin: 0 auto;
+    border-radius: 40px;
 }
 #logo{
   background-color: transparent;
@@ -96,23 +97,26 @@
 #navbarBasicExample:hover{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+#navbar-dropdown:hover{
+  color: green;
+}
 nav{
     font-size: 125%;
     font-weight: bold;
     height: 10vh;
 }
+
 .postagens{
   border-radius: 20px;
   -webkit-box-shadow: 0px 10px 2px -6px rgba(2,163,21,1);
   -moz-box-shadow: 0px 10px 2px -6px rgba(2,163,21,1);
   box-shadow: 0px 10px 2px -6px rgba(2,163,21,1);
     font-size: 4vh;
-    width: auto;
-    height: auto;
+    width: 90%;
     margin: 3% 5%;
-    display: inline-block;
 }
 .titulo{
+    margin: 0 auto;
     font-weight: bold;
 }
 a{
@@ -126,6 +130,20 @@ a:hover{
     background-size: cover;
     background-repeat: repeat;
     z-index:-5;
+}
+input:focus
+{
+    border: 1px solid #1670BE;
+    box-shadow: 0 0 3px #1670BE;
+    outline-offset: 0px;
+    outline: none;
+}
+textarea:focus
+{
+    border: 1px solid #1670BE;
+    box-shadow: 0 0 3px #1670BE;
+    outline-offset: 0px;
+    outline: none;
 }
 </style>
   

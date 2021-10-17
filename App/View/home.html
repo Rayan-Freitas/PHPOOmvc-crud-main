@@ -1,8 +1,13 @@
-<div >
+<div id="teste">
   {% for post in postagens %}
   <a href="#"><div class="postagens"></a>
     <a class="titulo" href="?pagina=post&id={{post.id}}">{{post.titulo}}</a>
-    <article>Conteúdo {{post.conteudo}}</article>
+    <article>Conteúdo {{ post.conteudo|length > 25 ? post.conteudo|slice(0, 25) ~ '...' : post.conteudo  }}</article>
   </div>
   {% endfor %}
 </div>
+
+<style>
+  #teste{
+  }
+</style>
